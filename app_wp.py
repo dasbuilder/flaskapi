@@ -54,10 +54,17 @@ post = {
 wp_posts_poster = requests.post(post_url, headers=header, data=post)
 print(wp_posts_poster.status_code)
 
+'''
+curl -L -X POST 'https://correando.local/wp-json/wp/v2/media' \
+--header "authorization: Basic pass=" \
+--header 'Content-Disposition: form-data; filename="tokyo_night.jpg"' \
+--header 'Content-Type: image/jpeg' \
+--data-binary "@/Users/spencer.anderson/Documents/testimages/tokyo_night.jpg"
+'''
 
 '''
 curl -L -X POST 'https://correando.wpengine.com/wp-json/wp/v2/media/' \
---header "authorization: Basic $(echo -n wpengine:91jkOCrsXVHGKYMrcfPILXEiNJ8eqfnw| base64)" \
+--header "authorization: Basic $(echo -n user:pass| base64)" \
 --header 'Content-Disposition: form-data; filename="tokyo_night.jpg"' \
 --header 'Content-Type: image/jpeg' \
 --data-binary "@tokyo_night.jpg"
