@@ -1,3 +1,4 @@
+wp-creds
 /flaskapi
 __pycache__/*
 *.sqlite

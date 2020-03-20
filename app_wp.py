@@ -3,6 +3,14 @@ import json
 import base64
 import os
 from datetime import datetime
+from configparser import ConfigParser
+
+def get_conf(file):
+    config = ConfigParser()
+    config.read(file)
+    creds = config.get('wp', 'username'), config.get('wp', 'passwd')
+    return creds
+
 
 # URLs
 url = 'http://correando.wpengine.com'
